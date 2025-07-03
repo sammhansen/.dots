@@ -1,0 +1,10 @@
+#hypr
+hyprshot
+matugen-bin
+waypaper
+cloudflare-warp-bin
+
+#power
+powermode-indicator-git
+
+
