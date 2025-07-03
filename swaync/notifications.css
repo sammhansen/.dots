@@ -1,0 +1,176 @@
+@define-color accent #f5c2e7;
+@define-color secondary_accent #89b4fa;
+
+@define-color rosewater #f5e0dc;
+@define-color flamingo #f2cdcd;
+@define-color pink #f5c2e7;
+@define-color mauve #cba6f7;
+@define-color red #f38ba8;
+@define-color maroon #eba0ac;
+@define-color peach #fab387;
+@define-color yellow #f9e2af;
+@define-color green #a6e3a1;
+@define-color teal #94e2d5;
+@define-color sky #89dceb;
+@define-color sapphire #74c7ec;
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+@define-color text #cdd6f4;
+@define-color subtext1 #bac2de;
+@define-color subtext0 #a6adc8;
+@define-color overlay2 #9399b2;
+@define-color overlay1 #7f849c;
+@define-color overlay0 #6c7086;
+@define-color surface2 #585b70;
+@define-color surface1 #45475a;
+@define-color surface0 #313244;
+@define-color base #1e1e2e;
+@define-color mantle #181825;
+@define-color crust #11111b;
+
+
+* {
+  color: @text;
+  all: unset;
+  font-size: 16px;
+  font-family: "SpaceMono Nerd Font";
+  transition: 200ms;
+}
+
+.notification-row {
+  color: @subtext1;
+  outline: none;
+  margin: 0;
+  padding: 0px;
+}
+
+.floating-notifications.background .notification-row .notification-background {
+  background: @mantle;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.6);
+  border: 0px;
+  border-radius: 3px;
+  margin: 16px;
+  padding: 0px;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification {
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification.critical {
+  border: 2px solid @red;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  .notification-content {
+  margin: 3px;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > * {
+  min-height: 3.4em;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action {
+  all: unset;
+  border-radius: 4px;
+  background-color: @bg-alt;
+  font-size: 5px;
+  margin: 40px;
+  font-weight: 200;
+  min-height: 12px;
+  padding: 0px;
+  border: 1px solid transparent;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action:hover {
+  background-color: @base;
+  border: 1px solid @crust;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .notification
+  > *:last-child
+  > *
+  .notification-action:active {
+  background-color: @crust;
+  color: @subtext1;
+}
+
+.image {
+  margin: 10px 20px 10px 0px;
+}
+
+.summary {
+  font-weight: 800;
+  font-size: 1rem;
+  color: @rosewater;
+}
+
+.body {
+  font-size: 0.8rem;
+  color: @subtext1;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .close-button {
+  margin: 6px;
+  padding: 2px;
+  border-radius: 3px;
+  background-color: transparent;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .close-button:hover {
+  background-color: @base;
+  color: @subtext1;
+}
+
+.floating-notifications.background
+  .notification-row
+  .notification-background
+  .close-button:active {
+  background-color: @mantle;
+  color: @text;
+}
+
+.notification.critical progress {
+  background-color: @mantle;
+}
+
+.notification.low progress,
+.notification.normal progress {
+  background-color: @mantle;
+}
