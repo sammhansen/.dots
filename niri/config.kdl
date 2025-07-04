@@ -130,6 +130,7 @@ environment {
     DISPLAY ":1"
     _JAVA_AWT_WM_NONREPARENTING "1"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
+    EDITOR "nvim"
 }
 
 prefer-no-csd
@@ -242,7 +243,7 @@ binds {
 
     Super+Ctrl+T { spawn "waytrogen"; }
     Alt+Period { spawn "~/.config/fuzzel/scripts/emoji"; }
-    Alt+V { spawn "bash" "-c" "pkill fuzzel || cliphist list | fuzzel  --match-mode fzf --dmenu -w 100 | cliphist decode | wl-copy"; }
+    Alt+V { spawn "bash" "-c" "pkill fuzzel || cliphist list | fuzzel  --match-mode fzf --dmenu -w 100 -p '󱉨  ' --placeholder='Search clip history' | cliphist decode | wl-copy"; }
     Alt+P { spawn "swaync-client" "--toggle-panel"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "+5"; }
@@ -251,7 +252,7 @@ binds {
     Ctrl+XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "-1"; }
     XF86AudioMute        allow-when-locked=true { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "swayosd-client" "--input-volume" "mute-toggle"; }
-    Alt+XF86AudioMute     { spawn "~/.config/niri/scripts/easyeffects.sh"; }
+    Alt+XF86AudioMute     { spawn "~/.config/fuzzel/scripts/easyeffects.sh"; }
 
     Alt+XF86AudioLowerVolume allow-when-locked=true { spawn "playerctl" "previous"; }
     Alt+XF86AudioRaiseVolume allow-when-locked=true { spawn "playerctl" "next"; }
@@ -264,7 +265,7 @@ binds {
     XF86MonBrightnessUp allow-when-locked=true { spawn "swayosd-client" "--brightness" "+5"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness" "-5"; }
     Ctrl+XF86MonBrightnessUp allow-when-locked=true { spawn "swayosd-client" "--brightness" "+1"; }
-    Ctrl+XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness" "-1"; }
+    Alt+XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness" "-1"; }
 
     XF86Search { spawn "blueberry"; }
 
@@ -408,7 +409,7 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { spawn "~/.config/niri/scripts/screenshot.sh"; }
+    Print { spawn "~/.config/fuzzel/scripts/screenshot.sh"; }
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 

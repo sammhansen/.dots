@@ -2,11 +2,13 @@
 
 pkill fuzzel
 
-options="Lock\nSuspend\nHibernate\nReboot\nShutdown\nLogout"
+OPTIONS="Lock\nSuspend\nHibernate\nReboot\nShutdown\nLogout"
+PROMPT="  "
+PLACEHOLDER="Choose an option"
 
-choice=$(echo -e "$options" | fuzzel --dmenu -p "> ")
+CHOICE=$(echo -e "$OPTIONS" | fuzzel --dmenu -p "$PROMPT" --placeholder="$PLACEHOLDER")
 
-case "$choice" in
+case "$CHOICE" in
 Lock)
   hyprlock
   ;;
