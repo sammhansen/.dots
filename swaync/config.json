@@ -29,10 +29,6 @@
   "timeout-low": 2,
   "transition-time": 200,
   "widget-config": {
-    "backlight": {
-      "device": "intel_backlight",
-      "label": "󰽤 "
-    },
     "buttons-grid": {
       "actions": [
         {
@@ -107,8 +103,12 @@
       "image-radius": 12,
       "image-size": 96
     },
+    "backlight": {
+      "device": "intel_backlight",
+      "label": "󰃞 "
+    },
     "volume": {
-      "label": "󰓃 ",
+      "label": " ",
       "show-per-app": false
     }
   },
