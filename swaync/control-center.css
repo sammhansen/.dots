@@ -59,6 +59,7 @@
   background: @base;
   color: @text;
   border-radius: 3px;
+  border: 1px solid #45475a;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button:hover {
@@ -67,6 +68,7 @@
 
 .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
   background: @main_accent;
+  border: 1px solid #313244;
 }
 
 .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked label {
@@ -77,9 +79,10 @@
 
 .notification-row .notification-background {
   background: @base;
-  padding: 4px;
-  border-radius: 4px;
+  padding: 0px;
+  border-radius: 2px;
   margin: 5px 5px 5px 5px;
+  border: 1px solid #313244;
 }
 
 .summary {
@@ -285,8 +288,9 @@ trough slider:hover {
   background: @base;
   padding: 2px 4px 2px 4px;
   margin: 4px 4px 1px 4px;
-  border-radius: 4px;
+  border-radius: 2px;
   color: @subtext0;
+  border: 1px solid #45475a;
 }
 
 .widget-volume > box > button {
@@ -299,7 +303,8 @@ trough slider:hover {
   color: @subtext0;
   padding: 2px 4px 2px 4px;
   margin: 1px 4px 4px 4px;
-  border-radius: 6px;
+  border-radius: 2px;
+  border: 1px solid #45475a;
 }
 .widget-backlight > box > button {
   background: transparent;
