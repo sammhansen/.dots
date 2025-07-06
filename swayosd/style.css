@@ -1,39 +1,41 @@
 window#osd {
-  padding: 0px 0px;
+  padding: 0px;
   border-radius: 5px;
   border: none;
   background: #181825;
+}
 
-  #container {
-    margin: 10px;
-  }
+window#osd #container {
+  margin: 10px;
+}
 
-  image,
-  label {
-    color: #cdd6f4;
-  }
+window#osd image,
+window#osd label {
+  color: #cba6f7;
+}
 
-  progressbar:disabled,
-  image:disabled {
-    opacity: 0.5;
-  }
+window#osd progressbar:disabled,
+window#osd image:disabled {
+  opacity: 0.5;
+}
 
-  progressbar {
-    min-height: 13px;
-    border-radius: 5px;
-    background: transparent;
-    border: none;
-  }
-  trough {
-    min-height: inherit;
-    border-radius: inherit;
-    border: none;
-    background: #313244;
-  }
-  progress {
-    min-height: inherit;
-    border-radius: inherit;
-    border: none;
-    background: #f5c2e7;
-  }
+window#osd progressbar {
+  min-height: 20px;
+  border-radius: 5px;
+  background: transparent;
+  border: none;
+}
+
+window#osd trough {
+  min-height: inherit;
+  border-radius: 5px;
+  border: none;
+  background: #313244;
+}
+
+window#osd progress {
+  min-height: inherit;
+  border-radius: 5px;
+  border: none;
+  background: #cba6f7;
 }
