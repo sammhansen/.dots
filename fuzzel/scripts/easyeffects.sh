@@ -7,7 +7,7 @@ CHOICE=$(echo -e "$OPTIONS" | fuzzel --dmenu -p "$PROMPT" --placeholder="$PLACEH
 
 case "$CHOICE" in
 bypass)
-  if [ $(easyeffects --bypass 3) == 1 ]; then
+  if [ "$(easyeffects --bypass 3)" = "1" ]; then
     easyeffects --bypass 2
     notify-send "Easyeffects" "Bypass has been disabled" -i ~/.arch/.assets/icons/equalizer.png 
   else 
@@ -16,14 +16,17 @@ bypass)
   fi
   ;;
 bass)
+  easyeffects --bypass 2
   easyeffects --load-preset bass
   notify-send "Easyeffects" "Enabled plugin $CHOICE" -i ~/.arch/.assets/icons/equalizer.png 
   ;;
 bass-eq)
-  easyeffects
+  easyeffects --bypass 2
+  easyeffects --load-preset bass-eq
   notify-send "Easyeffects" "Enabled plugin $CHOICE" -i ~/.arch/.assets/icons/equalizer.png 
   ;;
 autogain)
+  easyeffects --bypass 2
   easyeffects --load-preset autogain
   notify-send "Easyeffects" "Enabled plugin $CHOICE" -i ~/.arch/.assets/icons/equalizer.png 
   ;;
