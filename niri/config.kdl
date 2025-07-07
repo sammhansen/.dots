@@ -240,6 +240,7 @@ binds {
     Alt+S { spawn "bash" "-c" "~/.config/fuzzel/scripts/google.sh"; }
     Alt+E { spawn "thunar"; }
     Alt+A { spawn "fuzzel"; }
+    Alt+Z { spawn "hyprpicker" "-a"; }
 
     Super+Ctrl+T { spawn "waytrogen"; }
     Alt+Period { spawn "~/.config/fuzzel/scripts/emoji"; }
@@ -410,10 +411,11 @@ binds {
     // Mod+Shift+Space { switch-layout "prev"; }
 
     Print { spawn "~/.config/fuzzel/scripts/screenshot.sh"; }
+    Shift+R { spawn "~/.config/fuzzel/scripts/record.sh"; }
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-    Alt+Delete { spawn "~/.config/fuzzel/scripts/powermenu.sh"; }
-    Ctrl+Alt+Delete { quit; }
+    Ctrl+Alt+Delete { spawn "~/.config/fuzzel/scripts/powermenu.sh"; }
+    Alt+Delete { quit; }
     Mod+Shift+P { power-off-monitors; }
 }
