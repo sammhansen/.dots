@@ -1,32 +1,8 @@
 [
   {
-    "battery": {
-      "design-capacity": false,
-      "format": "<span foreground='#cba6f7' size='13000'>󰁹</span>\n{capacity}",
-      "format-charging": "<span foreground='#a6e3a1' size='13000'>󰁹<span foreground='#f5c2e7'><sup></sup></span></span>\n{capacity}",
-       "format-full": "<span foreground='#cba6f7' size='13000'>󰁹<span foreground='#f38ba8'><sup></sup></span></span>\n{capacity}",
-      "format-plugged": "<span foreground='#74c7ec' size='13000'>󰁹</span>\n{capacity}",
-      "full-at": 100,
-      "states": {
-        "critical": 10,
-        "good": 95,
-        "warning": 30
-      },
-      "tooltip": false
-    },
-    "bluetooth": {
-      "format": "󰂯",
-      "format-connected": "󰂯",
-      "format-disabled": "",
-      "on-click": "blueberry",
-      "tooltip": true,
-      "tooltip-format": "󰂯 {device_alias}",
-      "tooltip-format-connected": "{device_enumerate}",
-      "tooltip-format-enumerate-connected": "󰂯 {device_alias} 󰁹{device_battery_percentage}"
-    },
-    "clock": {
-      "format": "<span foreground='#cba6f7'></span>\n{:%H\n%M}",
-      "interval": 1,
+    "custom/menu": {
+      "format": "󰣇",
+      "on-click": "fuzzel",
       "tooltip": false
     },
     "cpu": {
@@ -35,14 +11,35 @@
       "interval": 1,
       "min-length": 5
     },
-    "custom/batt-warn": {
-      "exec": "/home/tamara/.config/waybar/scripts/batt-warn.sh",
-      "interval": 5
-    },
-    "custom/menu": {
-      "format": "",
-      "on-click": "fuzzel",
+    "memory": {
+      "format": "<span foreground='#cba6f7'></span>\n{percentage}",
+      "interval": 10,
       "tooltip": false
+    },
+    "temperature": {
+      "critical-threshold": 82,
+      "format": "<span foreground='#cba6f7'></span>\n{temperatureC}",
+      "format-critical": "<span foreground='#f38ba8'></span>\n{temperatureC}",
+      "hwmon-path": [
+        "/sys/class/hwmon/hwmon1/temp1_input",
+        "/sys/class/thermal/thermal_zone0/temp"
+      ],
+      "interval": 10,
+      "tooltip": true
+    },
+    "disk": {
+      "format": "<span foreground='#cba6f7'></span>\n{percentage_used}",
+      "interval": 30,
+      "path": "/",
+      "tooltip": false
+    },
+    "clock": {
+      "format": "<span foreground='#cba6f7'></span>\n{:%H\n%M}",
+      "interval": 1,
+      "tooltip": false
+    },
+    "niri/workspaces": {
+      "format": "{index}"
     },
     "custom/swaync": {
       "escape": true,
@@ -64,15 +61,16 @@
       "return-type": "json",
       "tooltip": false
     },
-    "disk": {
-      "format": "<span foreground='#cba6f7'></span>\n{percentage_used}",
-      "interval": 30,
-      "path": "/",
-      "tooltip": false
+    "bluetooth": {
+      "format": "󰂯",
+      "format-connected": "󰂯",
+      "format-disabled": "",
+      "on-click": "blueberry",
+      "tooltip": true,
+      "tooltip-format": "󰂯 {device_alias}",
+      "tooltip-format-connected": "{device_enumerate}",
+      "tooltip-format-enumerate-connected": "󰂯 {device_alias} 󰁹{device_battery_percentage}"
     },
-    "exclusive": true,
-    "fixed-center": true,
-    "gtk-layer-shell": true,
     "idle_inhibitor": {
       "format": "{icon}",
       "format-icons": {
@@ -80,17 +78,42 @@
         "deactivated": ""
       }
     },
+    "tray": {
+      "spacing": 5
+    },
+    "battery": {
+      "design-capacity": false,
+      "format": "<span foreground='#cba6f7' size='13000'></span>\n{capacity}",
+      "format-charging": "<span foreground='#a6e3a1' size='13000'></span>\n{capacity}",
+       "format-full": "<span foreground='#cba6f7' size='13000'></span>\n{capacity}",
+      "format-plugged": "<span foreground='#74c7ec' size='13000'></span>\n{capacity}",
+      "full-at": 100,
+      "states": {
+        "critical": 10,
+        "good": 95,
+        "warning": 30
+      },
+      "tooltip": false
+    },
+    "custom/batt-warn": {
+      "exec": "/home/tamara/.config/waybar/scripts/batt-warn.sh",
+      "interval": 5
+    },
+
+
+    "exclusive": true,
+    "fixed-center": true,
+    "gtk-layer-shell": true,
     "ipc": true,
     "layer": "top",
     "margin-bottom": 5,
     "margin-left": 4,
     "margin-right": 0,
     "margin-top": 5,
-    "memory": {
-      "format": "<span foreground='#cba6f7'></span>\n{percentage}",
-      "interval": 10,
-      "tooltip": false
-    },
+    "width": 15,
+    "passthrough": false,
+    "position": "left",
+    "spacing": 3,
     "modules-center": [
       "niri/workspaces"
     ],
@@ -110,26 +133,5 @@
       "battery",
       "custom/batt-warn"
     ],
-    "niri/workspaces": {
-      "format": "{index}"
-    },
-    "passthrough": false,
-    "position": "left",
-    "spacing": 3,
-    "temperature": {
-      "critical-threshold": 82,
-      "format": "<span foreground='#cba6f7'></span>\n{temperatureC}",
-      "format-critical": "<span foreground='#f38ba8'></span>\n{temperatureC}",
-      "hwmon-path": [
-        "/sys/class/hwmon/hwmon1/temp1_input",
-        "/sys/class/thermal/thermal_zone0/temp"
-      ],
-      "interval": 10,
-      "tooltip": true
-    },
-    "tray": {
-      "spacing": 5
-    },
-    "width": 15
   }
 ]

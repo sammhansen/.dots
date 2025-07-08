@@ -28,16 +28,15 @@
 @define-color mantle #181825;
 @define-color crust #11111b;
 
-
 * {
-  font-family: "SpaceMono Nerd Font";
+  font-family: "SpaceMono Nerd Font Propo";
   font-size: 97%;
 }
 
 window#waybar {
-  background: @mantle;
+  background: @crust;
   border-radius: 0px;
-  border: 1px solid #585b70;
+  border: 1px solid @surface2;
 }
 
 tooltip {
@@ -114,17 +113,15 @@ tooltip label {
 
 #custom-swaync,
 #bluetooth,
-#idle_inhibitor
-{
-  color: @subtext0;
+#idle_inhibitor {
+  color: @surface1;
 }
 
 #custom-swaync,
 #custom-swaync.dnd-none,
-#custom-swaync.dnd-inhibited-none
-{
+#custom-swaync.dnd-inhibited-none {
   font-size: 11px;
-  color: @subtext0;
+  color: @surface1;
 }
 
 #custom-swaync.notification {
@@ -139,7 +136,6 @@ tooltip label {
 
 #bluetooth {
   font-size: 14px;
-  color: @subtext0;
   padding: 1px 0px 0px 0px;
 }
 
@@ -149,7 +145,6 @@ tooltip label {
 
 #idle_inhibitor {
   font-size: 15px;
-  color: @subtext0;
   margin-bottom: 3px;
 }
 
@@ -157,17 +152,10 @@ tooltip label {
   color: @text;
 }
 
-@keyframes blink {
-  to {
-    color: @error;
-  }
+#battery.icon {
+  font-size: 20px;
 }
 
 #battery.critical:not(.charging) {
   color: @error;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
 }
