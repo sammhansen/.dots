@@ -71,8 +71,34 @@ tooltip label {
   padding-bottom: 5px;
 }
 
+#temperature.critical {
+  background-color: @error;
+}
+
 #clock {
   color: @text;
+}
+
+#privacy {
+  margin-top: 5px;
+}
+
+#privacy-item.screenshare {
+  color: @red;
+}
+
+#privacy-item.audio-in {
+  color: @red;
+}
+
+#privacy-item.audio-out {
+  color: @green;
+}
+
+#custom-wfrecorder {
+  color: @red;
+  font-size: 15px;
+  margin-top: 5px;
 }
 
 #workspaces button {
@@ -104,10 +130,6 @@ tooltip label {
 
 #workspaces button.urgent {
   color: @mantle;
-  background-color: @error;
-}
-
-#temperature.critical {
   background-color: @error;
 }
 
