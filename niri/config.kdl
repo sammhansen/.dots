@@ -32,7 +32,7 @@ output "eDP-1" {
 
 output "HDMI-A-2" {
     mode "1920x1080@60.00"
-    scale 1
+    scale 0.91
     transform "normal"
     position x=0 y=0
 }
@@ -411,7 +411,7 @@ binds {
     // Mod+Shift+Space { switch-layout "prev"; }
 
     Print { spawn "~/.config/fuzzel/scripts/screenshot.sh"; }
-    Shift+R { spawn "~/.config/fuzzel/scripts/record.sh"; }
+    Alt+R { spawn "~/.config/fuzzel/scripts/record.sh"; }
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
