@@ -4,7 +4,7 @@ DOTS_DIR=".arch"
 
 if pgrep wf-recorder >/dev/null; then
   TERMINATE_OPTIONS="Stop recording"
-  TERMINATE_CHOICE=$(echo "$TERMINATE_OPTIONS" | fuzzel --dmenu -p " " --placeholder "Wf-recorder is currently recording")
+  TERMINATE_CHOICE=$(echo "$TERMINATE_OPTIONS" | fuzzel --dmenu -p " " --placeholder "recording ongoing")
 
   case "$TERMINATE_CHOICE" in
   Stop\ recording)
@@ -13,7 +13,7 @@ if pgrep wf-recorder >/dev/null; then
     ;;
   esac
 else
-  MONITORS_PROMPT="󰍺  "
+  MONITORS_PROMPT="󰍹  "
   MONITORS_PLACEHOLDER="Select a monitor"
 
   getdate() {
@@ -39,10 +39,10 @@ else
   FOCUSED_MONITOR=$(echo "$MONITORS" | fuzzel --dmenu -p "$MONITORS_PROMPT" --placeholder "$MONITORS_PLACEHOLDER")
   [ -z "$FOCUSED_MONITOR" ] && exit 0
 
-  OPTIONS_PROMPT="  "
+  OPTIONS_PROMPT="󰻃  "
   OPTIONS_PLACEHOLDER="Select a mode"
   OPTIONS_MODE="Region\nRegion with sound\nFullscreen\nFullscreen with sound"
-  OPTIONS_CHOICE=$(echo -e "$OPTIONS_MODE" | fuzzel --dmenu -p "$OPTIONS_PROMPT")
+  OPTIONS_CHOICE=$(echo -e "$OPTIONS_MODE" | fuzzel --dmenu -p "$OPTIONS_PROMPT" --placeholder "$OPTIONS_PLACEHOLDER")
   [ -z "$OPTIONS_CHOICE" ] && exit 0
 
   case "$OPTIONS_CHOICE" in
