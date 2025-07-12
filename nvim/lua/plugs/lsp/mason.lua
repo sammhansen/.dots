@@ -51,6 +51,8 @@ return {
           "yamlls",
           "vimls",
           "cssls",
+          "ts_ls",
+          "tailwindcss",
         },
       })
     end,

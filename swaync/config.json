@@ -28,6 +28,7 @@
   "timeout-critical": 9,
   "timeout-low": 2,
   "transition-time": 200,
+  "group-by": "none",
   "widget-config": {
     "buttons-grid": {
       "actions": [

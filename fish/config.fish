@@ -53,11 +53,11 @@ alias "gentoo"="distrobox enter gentoo"
 alias "fedora"="distrobox enter fedora"
 alias "cat"="bat"
 alias "car"="bat"
-alias "code"="vscodium"
 
 
 
 export MANPAGER="nvim +Man!"
+export EDITOR="nvim"
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 fish_add_path $HOME/.spicetify
@@ -67,7 +67,6 @@ fish_add_path $HOME/.cargo/bin
 
 # Generated for pdtm. Do not edit.
 fish_add_path $HOME/.pdtm/go/bin
-
 
 # Created by `pipx` on 2025-07-01 08:09:14
 set PATH $PATH $HOME/.local/bin

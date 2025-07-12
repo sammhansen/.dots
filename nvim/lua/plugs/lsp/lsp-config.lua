@@ -38,6 +38,8 @@ return {
         cmd = { "csharp-ls" },
       },
       cssls = {},
+      ts_ls = {},
+      tailwindcss = {},
 
     }
   },

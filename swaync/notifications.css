@@ -28,7 +28,6 @@
 @define-color mantle #181825;
 @define-color crust #11111b;
 
-
 * {
   color: @text;
   all: unset;
@@ -59,6 +58,7 @@
   .notification {
   padding: 3px;
   border-radius: 3px;
+  border: 1px solid @surface2;
 }
 
 .floating-notifications.background
