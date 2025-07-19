@@ -2,7 +2,7 @@
 
 pkill fuzzel
 
-BROWSER="/usr/bin/chromium"
+BROWSER="/usr/bin/brave"
 XARGS="/usr/bin/xargs"
 PROMPT="󰻞  "
 PLACEHOLDER="ask chatgpt"

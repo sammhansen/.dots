@@ -2,7 +2,7 @@
 
 pkill fuzzel
 
-BROWSER="/usr/bin/chromium"
+BROWSER="/usr/bin/brave"
 PROMPT="󰊭  "
 PLACEHOLDER="Search Google or type URL"
 SEARCHENGINE="https://www.google.com/search?q="

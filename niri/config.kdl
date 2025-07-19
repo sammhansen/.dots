@@ -235,7 +235,7 @@ binds {
 
     Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Alt+Tab hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
-    Alt+B { spawn "chromium"; }
+    Alt+B { spawn "brave"; }
     Alt+C { spawn "bash" "-c" "~/.config/fuzzel/scripts/chatgpt.sh"; }
     Alt+S { spawn "bash" "-c" "~/.config/fuzzel/scripts/google.sh"; }
     Alt+E { spawn "thunar"; }
