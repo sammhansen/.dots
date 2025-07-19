@@ -31,7 +31,6 @@ return {
           },
         },
       },
-      nil_ls = {},
       bashls = {},
       jsonls = {},
       csharp_ls = {
