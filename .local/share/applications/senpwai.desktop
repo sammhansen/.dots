@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Senpwai
+Comment=Download your anime
+Exec=/home/tamara/.config/niri/scripts/senpwai.sh
+
