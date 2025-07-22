@@ -96,7 +96,7 @@ spawn-at-startup "dbus-update-activation-environment" "--all"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 spawn-at-startup "nm-applet"
-spawn-at-startup "xwayland-satellite" ":1"
+// spawn-at-startup "xwayland-satellite" ":1"
 spawn-at-startup "wlsunset" "-t" "3500" "-T" "6500" "-S" "07:00" "-s" "19:00" "-g" "0.7"
 spawn-at-startup "hypridle"
 spawn-at-startup "kdeconnectd"
@@ -234,18 +234,19 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
-    Alt+Tab hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
+    Alt+Tab hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Alt+B { spawn "brave"; }
     Alt+C { spawn "bash" "-c" "~/.config/fuzzel/scripts/chatgpt.sh"; }
     Alt+S { spawn "bash" "-c" "~/.config/fuzzel/scripts/google.sh"; }
     Alt+E { spawn "thunar"; }
     Alt+A { spawn "fuzzel"; }
+    Alt+P { spawn "frbw"; }
     Alt+Z { spawn "hyprpicker" "-a"; }
 
-    Super+Ctrl+T { spawn "waytrogen"; }
+    Super+Ctrl+W { spawn "waytrogen"; }
     Alt+Period { spawn "~/.config/fuzzel/scripts/emoji"; }
     Alt+V { spawn "bash" "-c" "pkill fuzzel || cliphist list | fuzzel  --match-mode fzf --dmenu -w 100 -p '󱉨  ' --placeholder='Search clip history' | cliphist decode | wl-copy"; }
-    Alt+P { spawn "swaync-client" "--toggle-panel"; }
+    Ctrl+P { spawn "swaync-client" "--toggle-panel"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "+5"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "-5"; }
