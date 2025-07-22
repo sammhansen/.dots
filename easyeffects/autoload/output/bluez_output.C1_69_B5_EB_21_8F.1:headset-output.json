@@ -2,5 +2,5 @@
   "device": "bluez_output.C1_69_B5_EB_21_8F.1",
   "device-description": "oraimo FreePods lite",
   "device-profile": "headset-output",
-  "enabled": false
+  "preset-name": "blank"
 }
