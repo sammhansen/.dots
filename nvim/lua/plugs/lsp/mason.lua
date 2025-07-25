@@ -49,6 +49,8 @@ return {
           "jsonls",
           "yamlls",
           "vimls",
+          "emmet_language_server",
+          "html",
           "cssls",
           "ts_ls",
           "tailwindcss",
