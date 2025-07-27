@@ -101,6 +101,7 @@ spawn-at-startup "wlsunset" "-t" "3500" "-T" "6500" "-S" "07:00" "-s" "19:00" "-
 spawn-at-startup "hypridle"
 spawn-at-startup "kdeconnectd"
 spawn-at-startup "kdeconnect-indicator"
+spawn-at-startup "lbagtk" "--low" "20" "--risky" "10" "--daemon"
 
 
 hotkey-overlay {
@@ -243,7 +244,7 @@ binds {
     Alt+P { spawn "frbw"; }
     Alt+Z { spawn "hyprpicker" "-a"; }
 
-    Super+Ctrl+W { spawn "waytrogen"; }
+    Super+Ctrl+W { spawn "waypaper"; }
     Alt+Period { spawn "~/.config/fuzzel/scripts/emoji"; }
     Alt+V { spawn "bash" "-c" "pkill fuzzel || cliphist list | fuzzel  --match-mode fzf --dmenu -w 100 -p '󱉨  ' --placeholder='Search clip history' | cliphist decode | wl-copy"; }
     Ctrl+P { spawn "swaync-client" "--toggle-panel"; }
@@ -302,14 +303,21 @@ binds {
     Mod+W     { focus-monitor-up; }
     Mod+D     { focus-monitor-right; }
 
-    Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
-    Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
 
-    // Mod+Shift+Ctrl+Left  { move-window-to-monitor-left; }
+    Mod+Alt+W  { move-window-to-monitor-up; }
+    Mod+Alt+D  { move-window-to-monitor-right; }
+    Mod+Alt+S  { move-window-to-monitor-down; }
+    Mod+Alt+A  { move-window-to-monitor-left; }
 
-    // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
+    Mod+Alt+Ctrl+W     { move-column-to-monitor-up; }
+    Mod+Alt+Ctrl+D     { move-column-to-monitor-right; }
+    Mod+Alt+Ctrl+S     { move-column-to-monitor-down; }
+    Mod+Alt+Ctrl+A     { move-column-to-monitor-left; }
+
+    Mod+Alt+Shift+W  { move-workspace-to-monitor-up; }
+    Mod+Alt+Shift+D  { move-workspace-to-monitor-right; }
+    Mod+Alt+Shift+S  { move-workspace-to-monitor-down; }
+    Mod+Alt+Shift+A  { move-workspace-to-monitor-left; }
 
     Mod+Ctrl+Alt+J              { focus-workspace-down; }
     Mod+Ctrl+Alt+K              { focus-workspace-up; }
@@ -381,12 +389,12 @@ binds {
     Mod+Period { expel-window-from-column; }
 
     Mod+R { switch-preset-column-width; }
-    Mod+Minus { set-column-width "-10%"; }
-    Mod+Equal { set-column-width "+10%"; }
+    Shift+Alt+H { set-column-width "-10%"; }
+    Shift+Alt+L { set-column-width "+10%"; }
 
-    Mod+Alt+W { switch-preset-window-height; }
-    Mod+Shift+Minus { set-window-height "-10%"; }
-    Mod+Shift+Equal { set-window-height "+10%"; }
+    Mod+Shift+W { switch-preset-window-height; }
+    Shift+Alt+J { set-window-height "-10%"; }
+    Shift+Alt+K { set-window-height "+10%"; }
 
     Mod+Ctrl+W { reset-window-height; }
 

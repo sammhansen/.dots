@@ -130,7 +130,7 @@
     },
     "custom/batt-warn": {
       "exec": "~/.config/waybar/scripts/batt-warn.sh",
-      "interval": 5
+      "interval": 3
     },
     "custom/wfrecorder": {
       "format": "",
