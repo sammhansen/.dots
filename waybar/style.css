@@ -124,7 +124,7 @@ tooltip label {
 }
 
 #workspaces button.visible {
-  color: @text;
+  color: @mantle;
   background-color: @main_accent;
 }
 

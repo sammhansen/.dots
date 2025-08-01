@@ -14,6 +14,7 @@ lazy.setup({
   require("plugs.utils.conform"),
   require("plugs.utils.live-server"),
   require("plugs.utils.render-markdown"),
+  require("plugs.utils.lint"),
   require("plugs.lsp.mason"),
   require("plugs.lsp.nvim-cmp"),
   require("plugs.lsp.trouble"),

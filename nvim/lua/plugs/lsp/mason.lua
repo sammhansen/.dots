@@ -12,6 +12,8 @@ return {
           "shfmt",
           "alejandra",
           "clang-format",
+          -- linters
+          "eslint_d",
 
         },
         automatic_installation = true,
