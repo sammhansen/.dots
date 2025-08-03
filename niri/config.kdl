@@ -53,9 +53,7 @@ layout {
         proportion 0.66667
     }
 
-    default-column-width {
-      proportion 0.5
-    }
+    default-column-width {}
 
     focus-ring {
       off
@@ -239,16 +237,17 @@ binds {
     Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Alt+Tab hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Alt+B { spawn "brave"; }
-    Alt+C { spawn "bash" "-c" "~/.config/fuzzel/scripts/chatgpt.sh"; }
-    Alt+S { spawn "bash" "-c" "~/.config/fuzzel/scripts/google.sh"; }
+    Alt+C { spawn "bash" "-c" "~/.config/niri/scripts/chatgpt.sh"; }
+    Alt+S { spawn "bash" "-c" "~/.config/niri/scripts/google.sh"; }
     Alt+E { spawn "thunar"; }
     Alt+A { spawn "fuzzel"; }
     Alt+P { spawn "frbw"; }
     Alt+Z { spawn "hyprpicker" "-a"; }
 
     Super+Ctrl+W { spawn "waypaper"; }
-    Alt+Period { spawn "~/.config/fuzzel/scripts/emoji"; }
+    Alt+Period { spawn "~/.config/niri/scripts/emoji.sh"; }
     Alt+V { spawn "bash" "-c" "pkill fuzzel || cliphist list | fuzzel  --match-mode fzf --dmenu -w 100 -p '󱉨  ' --placeholder='Search clip history' | cliphist decode | wl-copy"; }
+    Alt+Space { spawn "~/.config/niri/scripts/quick.sh"; }
     Ctrl+P { spawn "swaync-client" "--toggle-panel"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "+5"; }
@@ -257,7 +256,7 @@ binds {
     Ctrl+XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "-1"; }
     XF86AudioMute        allow-when-locked=true { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "swayosd-client" "--input-volume" "mute-toggle"; }
-    Alt+XF86AudioMute     { spawn "~/.config/fuzzel/scripts/easyeffects.sh"; }
+    Alt+XF86AudioMute     { spawn "~/.config/niri/scripts/easyeffects.sh"; }
 
     Alt+XF86AudioLowerVolume allow-when-locked=true { spawn "playerctl" "previous"; }
     Alt+XF86AudioRaiseVolume allow-when-locked=true { spawn "playerctl" "next"; }
@@ -409,7 +408,7 @@ binds {
     Mod+Ctrl+C { center-visible-columns; }
 
     Mod+Space       { toggle-window-floating; }
-    Alt+Space { switch-focus-between-floating-and-tiling; }
+    Ctrl+Space { switch-focus-between-floating-and-tiling; }
 
     Mod+T { toggle-column-tabbed-display; }
 
@@ -421,12 +420,12 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { spawn "~/.config/fuzzel/scripts/screenshot.sh"; }
-    Alt+R { spawn "~/.config/fuzzel/scripts/record.sh"; }
+    Print { spawn "~/.config/niri/scripts/screenshot.sh"; }
+    Alt+R { spawn "~/.config/niri/scripts/record.sh"; }
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-    Ctrl+Alt+Delete { spawn "~/.config/fuzzel/scripts/powermenu.sh"; }
+    Ctrl+Alt+Delete { spawn "~/.config/niri/scripts/powermenu.sh"; }
     Alt+Delete { quit; }
     Mod+Shift+P { power-off-monitors; }
 }
