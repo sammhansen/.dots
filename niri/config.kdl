@@ -246,7 +246,7 @@ binds {
 
     Super+Ctrl+W { spawn "waypaper"; }
     Alt+Period { spawn "~/.config/niri/scripts/emoji.sh"; }
-    Alt+V { spawn "bash" "-c" "pkill fuzzel || cliphist list | fuzzel  --match-mode fzf --dmenu -w 100 -p '󱉨  ' --placeholder='Search clip history' | cliphist decode | wl-copy"; }
+    Alt+V { spawn "~/.config/niri/scripts/clipboard.sh"; }
     Alt+Space { spawn "~/.config/niri/scripts/quick.sh"; }
     Ctrl+P { spawn "swaync-client" "--toggle-panel"; }
 
@@ -266,10 +266,8 @@ binds {
     XF86AudioPrev allow-when-locked=true { spawn "playerctl" "previous"; }
     XF86AudioNext allow-when-locked=true { spawn "playerctl" "next"; }
 
-    XF86MonBrightnessUp allow-when-locked=true { spawn "swayosd-client" "--brightness" "+5"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness" "-5"; }
-    Ctrl+XF86MonBrightnessUp allow-when-locked=true { spawn "swayosd-client" "--brightness" "+1"; }
-    Alt+XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness" "-1"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "~/.config/niri/scripts/brightness.sh" "+"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "~/.config/niri/scripts/brightness.sh" "-"; }
 
     XF86Search { spawn "blueberry"; }
 
@@ -421,6 +419,7 @@ binds {
     // Mod+Shift+Space { switch-layout "prev"; }
 
     Print { spawn "~/.config/niri/scripts/screenshot.sh"; }
+    Alt+Print { screenshot; }
     Alt+R { spawn "~/.config/niri/scripts/record.sh"; }
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
