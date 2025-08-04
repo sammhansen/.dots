@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Remix Desktop
+Name=Remix IDE
 Comment=Ethereum IDE for smart contract development
 Exec=/opt/remix-desktop/Remix-Desktop-1.1.5.AppImage
 Icon=/home/tamara/.local/share/applications/icons/remix.png
