@@ -24,16 +24,17 @@ fi
 
 direction=$arg
 
-monitor_data=$(hyprctl monitors -j)
-focused_name=$(echo $monitor_data | jq -r '.[] | select(.focused == true) | .name')
+monitor_data=$(niri msg outputs | grep '^Output' | grep -oP '\(\K[^)]+')
+
+focused_name=$(echo $monitor_data | niri msg focused-output | grep '^Output' | grep -oP '\(\K[^)]+')
 
 if [ "$focused_name" == "eDP-1" ]; then
     if [ "$direction" == "-" ]; then
-        swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --brightness lower
+      swayosd-client --monitor "$(niri msg focused-output | grep '^Output' | grep -oP '\(\K[^)]+')" --brightness lower
     else
-        swayosd-client --monitor "$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')" --brightness raise
+      swayosd-client --monitor "$(niri msg focused-output | grep '^Output' | grep -oP '\(\K[^)]+')" --brightness raise
     fi
 else
-    focused_id=$(echo $monitor_data | jq -r '.[] | select(.focused == true) | .id')
+  focused_id=1
     ddcutil --sleep-multiplier=.2 --display=$focused_id setvcp 10 $direction 3
 fi
