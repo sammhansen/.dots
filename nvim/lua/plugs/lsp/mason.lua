@@ -14,6 +14,7 @@ return {
           "clang-format",
           -- linters
           "eslint_d",
+          "solhint",
 
         },
         automatic_installation = true,
@@ -56,6 +57,8 @@ return {
           "cssls",
           "ts_ls",
           "tailwindcss",
+          "nil_ls",
+          "solidity_ls_nomicfoundation",
         },
       })
     end,
