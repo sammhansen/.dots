@@ -23,6 +23,13 @@ input {
     focus-follows-mouse
 }
 
+// output "eDP-1" {
+//     mode "1920x1080@60.00"
+//     scale 1
+//     transform "normal"
+//     position x=1920 y=720
+// }
+
 output "eDP-1" {
     mode "1920x1080@60.00"
     scale 1
@@ -102,6 +109,7 @@ spawn-at-startup "hypridle"
 spawn-at-startup "kdeconnectd"
 spawn-at-startup "kdeconnect-indicator"
 spawn-at-startup "lbagtk" "--low" "20" "--risky" "10" "--daemon"
+spawn-at-startup "protonvpn-app"
 
 
 hotkey-overlay {
