@@ -1,0 +1,30 @@
+{
+  "workbench.startupEditor": "none",
+  "editor.fontSize": 16,
+  "editor.fontFamily": "VictorMono NFP SemiBold",
+  "editor.fontLigatures": true,
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "terminal.integrated.fontFamily": "VictorMono NFP SemiBold",
+  "terminal.fontLigatures": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "vscode.typescript-language-features",
+  "terminal.integrated.defaultProfile.linux": "tmux",
+  "terminal.integrated.profiles": {
+    "zellij": {
+      "path": "/usr/bin/zellij"
+    },
+    "zsh": {
+      "path": "/usr/bin/zsh"
+    },
+    "fish": {
+      "path": "/usr/bin/fish"
+    },
+    "bash": {
+      "path": "/usr/bin/bash"
+    },
+    "tmux": {
+      "path": "/usr/bin/tmux"
+    }
+  }
+}
