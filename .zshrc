@@ -30,6 +30,7 @@ zinit light Aloxaf/fzf-tab
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
+# update index with pkgfile --update
 zinit snippet OMZP::command-not-found
 
 # --- COMPLETION ---
