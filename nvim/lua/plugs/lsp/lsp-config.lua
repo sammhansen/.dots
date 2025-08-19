@@ -20,6 +20,11 @@ return {
             checkOnSave = {
               command = "clippy",
             },
+            inlayHints = {
+              typeHints = { enable = true },
+              parameterHints = { enable = true },
+              chainingHints = { enable = true },
+            },
           },
         },
       },
@@ -36,9 +41,13 @@ return {
       csharp_ls = {
         cmd = { "csharp-ls" },
       },
+      emmet_language_server = {},
+      html = {},
       cssls = {},
       ts_ls = {},
       tailwindcss = {},
+      nil_ls = {},
+      solidity_ls_nomicfoundation = {},
 
     }
   },

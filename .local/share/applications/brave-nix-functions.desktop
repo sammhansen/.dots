@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Nix Functions
+Exec=brave --app=https://teu5us.github.io/nix-lib.html#nix-builtin-functions
+Icon=/home/tamara/.local/share/applications/icons/nix.png
+

@@ -74,6 +74,26 @@
     "niri/workspaces": {
       "format": "{index}"
     },
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "on-click": "activate",
+      "orientation": "vertical",
+      "persistent-workspaces": {
+        "eDP-1": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "HDMI-A-2": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
     "custom/swaync": {
       "escape": true,
       "exec": "swaync-client -swb",
@@ -130,7 +150,7 @@
     },
     "custom/batt-warn": {
       "exec": "~/.config/waybar/scripts/batt-warn.sh",
-      "interval": 5
+      "interval": 3
     },
     "custom/wfrecorder": {
       "format": "",
@@ -163,7 +183,8 @@
       "privacy"
     ],
     "modules-center": [
-      "niri/workspaces"
+      "niri/workspaces",
+      "hyprland/workspaces"
     ],
     "modules-right": [
       "custom/swaync",
@@ -172,6 +193,6 @@
       "tray",
       "battery",
       "custom/batt-warn"
-    ],
+    ]
   }
 ]

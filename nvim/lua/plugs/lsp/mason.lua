@@ -12,6 +12,9 @@ return {
           "shfmt",
           "alejandra",
           "clang-format",
+          -- linters
+          "eslint_d",
+          "solhint",
 
         },
         automatic_installation = true,
@@ -49,9 +52,13 @@ return {
           "jsonls",
           "yamlls",
           "vimls",
+          "emmet_language_server",
+          "html",
           "cssls",
           "ts_ls",
           "tailwindcss",
+          "nil_ls",
+          "solidity_ls_nomicfoundation",
         },
       })
     end,

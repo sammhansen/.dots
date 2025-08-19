@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=TryHackMe
+Exec=brave --app=https://tryhackme.com/dashboard
+Icon=/home/tamara/.local/share/applications/icons/tryhackme.png
+

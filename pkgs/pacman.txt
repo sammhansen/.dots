@@ -1,3 +1,13 @@
+#obs-studio
+obs-studio
+libva
+libva-utils
+libva-vaapi
+intel-media-sdk
+intel-media-driver
+libmfx
+libva-intel-driver
+
 fish
 wl-clipboard
 nautilus

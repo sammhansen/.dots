@@ -23,6 +23,13 @@ input {
     focus-follows-mouse
 }
 
+// output "eDP-1" {
+//     mode "1920x1080@60.00"
+//     scale 1
+//     transform "normal"
+//     position x=1920 y=720
+// }
+
 output "eDP-1" {
     mode "1920x1080@60.00"
     scale 1
@@ -101,6 +108,8 @@ spawn-at-startup "wlsunset" "-t" "3500" "-T" "6500" "-S" "07:00" "-s" "19:00" "-
 spawn-at-startup "hypridle"
 spawn-at-startup "kdeconnectd"
 spawn-at-startup "kdeconnect-indicator"
+spawn-at-startup "lbagtk" "--low" "20" "--risky" "10" "--daemon"
+spawn-at-startup "protonvpn-app"
 
 
 hotkey-overlay {
@@ -236,16 +245,17 @@ binds {
     Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Alt+Tab hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Alt+B { spawn "brave"; }
-    Alt+C { spawn "bash" "-c" "~/.config/fuzzel/scripts/chatgpt.sh"; }
-    Alt+S { spawn "bash" "-c" "~/.config/fuzzel/scripts/google.sh"; }
+    Alt+C { spawn "bash" "-c" "~/.config/niri/scripts/chatgpt.sh"; }
+    Alt+S { spawn "bash" "-c" "~/.config/niri/scripts/google.sh"; }
     Alt+E { spawn "thunar"; }
     Alt+A { spawn "fuzzel"; }
     Alt+P { spawn "frbw"; }
     Alt+Z { spawn "hyprpicker" "-a"; }
 
-    Super+Ctrl+W { spawn "waytrogen"; }
-    Alt+Period { spawn "~/.config/fuzzel/scripts/emoji"; }
-    Alt+V { spawn "bash" "-c" "pkill fuzzel || cliphist list | fuzzel  --match-mode fzf --dmenu -w 100 -p '󱉨  ' --placeholder='Search clip history' | cliphist decode | wl-copy"; }
+    Super+Ctrl+W { spawn "waypaper"; }
+    Alt+Period { spawn "~/.config/niri/scripts/emoji.sh"; }
+    Alt+V { spawn "~/.config/niri/scripts/clipboard.sh"; }
+    Alt+Space { spawn "~/.config/niri/scripts/quick.sh"; }
     Ctrl+P { spawn "swaync-client" "--toggle-panel"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "+5"; }
@@ -254,7 +264,7 @@ binds {
     Ctrl+XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "-1"; }
     XF86AudioMute        allow-when-locked=true { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "swayosd-client" "--input-volume" "mute-toggle"; }
-    Alt+XF86AudioMute     { spawn "~/.config/fuzzel/scripts/easyeffects.sh"; }
+    Alt+XF86AudioMute     { spawn "~/.config/niri/scripts/easyeffects.sh"; }
 
     Alt+XF86AudioLowerVolume allow-when-locked=true { spawn "playerctl" "previous"; }
     Alt+XF86AudioRaiseVolume allow-when-locked=true { spawn "playerctl" "next"; }
@@ -264,10 +274,8 @@ binds {
     XF86AudioPrev allow-when-locked=true { spawn "playerctl" "previous"; }
     XF86AudioNext allow-when-locked=true { spawn "playerctl" "next"; }
 
-    XF86MonBrightnessUp allow-when-locked=true { spawn "swayosd-client" "--brightness" "+5"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness" "-5"; }
-    Ctrl+XF86MonBrightnessUp allow-when-locked=true { spawn "swayosd-client" "--brightness" "+1"; }
-    Alt+XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness" "-1"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "~/.config/niri/scripts/brightness.sh" "+"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "~/.config/niri/scripts/brightness.sh" "-"; }
 
     XF86Search { spawn "blueberry"; }
 
@@ -302,14 +310,21 @@ binds {
     Mod+W     { focus-monitor-up; }
     Mod+D     { focus-monitor-right; }
 
-    Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
-    Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
 
-    // Mod+Shift+Ctrl+Left  { move-window-to-monitor-left; }
+    Mod+Alt+W  { move-window-to-monitor-up; }
+    Mod+Alt+D  { move-window-to-monitor-right; }
+    Mod+Alt+S  { move-window-to-monitor-down; }
+    Mod+Alt+A  { move-window-to-monitor-left; }
 
-    // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
+    Mod+Alt+Ctrl+W     { move-column-to-monitor-up; }
+    Mod+Alt+Ctrl+D     { move-column-to-monitor-right; }
+    Mod+Alt+Ctrl+S     { move-column-to-monitor-down; }
+    Mod+Alt+Ctrl+A     { move-column-to-monitor-left; }
+
+    Mod+Alt+Shift+W  { move-workspace-to-monitor-up; }
+    Mod+Alt+Shift+D  { move-workspace-to-monitor-right; }
+    Mod+Alt+Shift+S  { move-workspace-to-monitor-down; }
+    Mod+Alt+Shift+A  { move-workspace-to-monitor-left; }
 
     Mod+Ctrl+Alt+J              { focus-workspace-down; }
     Mod+Ctrl+Alt+K              { focus-workspace-up; }
@@ -381,12 +396,12 @@ binds {
     Mod+Period { expel-window-from-column; }
 
     Mod+R { switch-preset-column-width; }
-    Mod+Minus { set-column-width "-10%"; }
-    Mod+Equal { set-column-width "+10%"; }
+    Shift+Alt+H { set-column-width "-10%"; }
+    Shift+Alt+L { set-column-width "+10%"; }
 
-    Mod+Alt+W { switch-preset-window-height; }
-    Mod+Shift+Minus { set-window-height "-10%"; }
-    Mod+Shift+Equal { set-window-height "+10%"; }
+    Mod+Shift+W { switch-preset-window-height; }
+    Shift+Alt+J { set-window-height "-10%"; }
+    Shift+Alt+K { set-window-height "+10%"; }
 
     Mod+Ctrl+W { reset-window-height; }
 
@@ -399,7 +414,7 @@ binds {
     Mod+Ctrl+C { center-visible-columns; }
 
     Mod+Space       { toggle-window-floating; }
-    Alt+Space { switch-focus-between-floating-and-tiling; }
+    Ctrl+Space { switch-focus-between-floating-and-tiling; }
 
     Mod+T { toggle-column-tabbed-display; }
 
@@ -411,12 +426,13 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { spawn "~/.config/fuzzel/scripts/screenshot.sh"; }
-    Alt+R { spawn "~/.config/fuzzel/scripts/record.sh"; }
+    Print { spawn "~/.config/niri/scripts/screenshot.sh"; }
+    Alt+Print { screenshot; }
+    Alt+R { spawn "~/.config/niri/scripts/record.sh"; }
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-    Ctrl+Alt+Delete { spawn "~/.config/fuzzel/scripts/powermenu.sh"; }
+    Ctrl+Alt+Delete { spawn "~/.config/niri/scripts/powermenu.sh"; }
     Alt+Delete { quit; }
     Mod+Shift+P { power-off-monitors; }
 }

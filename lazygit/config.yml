@@ -1,0 +1,10 @@
+git:
+  paging:
+    colorArg: always
+    pager: delta --paging=never
+gui:
+  authorColors:
+    Hansen: '#f5c2e7'
+  nerdFontsVersion: 3
+update:
+  method: never

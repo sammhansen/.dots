@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Commits
+Exec=brave --app=https://www.conventionalcommits.org/en/v1.0.0/
+Icon=/home/tamara/.local/share/applications/icons/commits.svg
+

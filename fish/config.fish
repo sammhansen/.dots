@@ -32,15 +32,16 @@ alias "l"="eza"
 alias "la"="eza -la"
 alias "sl"="eza"
 alias "lg"="lazygit"
-alias "v"="nvim"
+alias "v"="tmux set-option status;nvim"
 alias "mkdir"="mkdir -p"
 alias "tk"="tmux kill-server"
 alias "zk"="zellij kill-all-sessions"
 
-alias "gs"="git status"
+alias "gs"="git status --short"
 alias "gd"="git diff"
 alias "gc"="git commit"
 alias "ga"="git add"
+alias "gcl"="git clone"
 alias "gp"="git push"
 alias "gpm"="git push -u origin main"
 alias "db"="distrobox"
@@ -54,6 +55,8 @@ alias "fedora"="distrobox enter fedora"
 alias "cat"="bat"
 alias "car"="bat"
 
+alias "cr"="cargo run"
+alias "cb"="cargo build"
 
 
 export MANPAGER="nvim +Man!"
@@ -70,3 +73,5 @@ fish_add_path $HOME/.pdtm/go/bin
 
 # Created by `pipx` on 2025-07-01 08:09:14
 set PATH $PATH $HOME/.local/bin
+
+fish_add_path /home/tamara/.spicetify
