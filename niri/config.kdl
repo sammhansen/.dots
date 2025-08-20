@@ -32,7 +32,7 @@ input {
 
 output "eDP-1" {
     mode "1920x1080@60.00"
-    scale 1
+    scale 1.15
     transform "normal"
     position x=0 y=1080
 }
@@ -60,7 +60,9 @@ layout {
         proportion 0.66667
     }
 
-    default-column-width {}
+    default-column-width {
+      proportion 0.5
+    }
 
     focus-ring {
       off
@@ -109,7 +111,7 @@ spawn-at-startup "hypridle"
 spawn-at-startup "kdeconnectd"
 spawn-at-startup "kdeconnect-indicator"
 spawn-at-startup "lbagtk" "--low" "20" "--risky" "10" "--daemon"
-spawn-at-startup "protonvpn-app"
+spawn-at-startup "vicinae" "server"
 
 
 hotkey-overlay {
@@ -236,27 +238,29 @@ window-rule {
 window-rule {
     geometry-corner-radius 1
     clip-to-geometry true
-    opacity 1.0
+    opacity 0.95
 }
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
-    Alt+Tab hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Alt+B { spawn "brave"; }
+    Super+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    Super+B { spawn "brave"; }
     Alt+C { spawn "bash" "-c" "~/.config/niri/scripts/chatgpt.sh"; }
     Alt+S { spawn "bash" "-c" "~/.config/niri/scripts/google.sh"; }
-    Alt+E { spawn "thunar"; }
-    Alt+A { spawn "fuzzel"; }
-    Alt+P { spawn "frbw"; }
-    Alt+Z { spawn "hyprpicker" "-a"; }
+    Super+E { spawn "thunar"; }
+    Super+A { spawn "fuzzel"; }
+    Alt+Space { spawn "vicinae"; }
+    Super+P { spawn "frbw"; }
+    Super+Z { spawn "hyprpicker" "-a"; }
 
     Super+Ctrl+W { spawn "waypaper"; }
-    Alt+Period { spawn "~/.config/niri/scripts/emoji.sh"; }
-    Alt+V { spawn "~/.config/niri/scripts/clipboard.sh"; }
-    Alt+Space { spawn "~/.config/niri/scripts/quick.sh"; }
-    Ctrl+P { spawn "swaync-client" "--toggle-panel"; }
+    // Super+Period { spawn "~/.config/niri/scripts/emoji.sh"; }
+    // Super+V { spawn "~/.config/niri/scripts/clipboard.sh"; }
+    Super+V { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
+    // Alt+Space { spawn "~/.config/niri/scripts/quick.sh"; }
+    Super+S { spawn "swaync-client" "--toggle-panel"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "+5"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "-5"; }
