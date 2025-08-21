@@ -23,6 +23,14 @@ input {
     focus-follows-mouse
 }
 
+cursor {
+    xcursor-theme "Posy_Cursor_Black"
+    xcursor-size 40
+
+    hide-when-typing
+    hide-after-inactive-ms 1000
+}
+
 // output "eDP-1" {
 //     mode "1920x1080@60.00"
 //     scale 1
