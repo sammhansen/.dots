@@ -52,6 +52,8 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 # enable preview for zoxide
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+# rehash after new binary is installed
+zstyle ':completion:*' rehash true
 
 # --- SHELL INTEGRATIONS ---
 
@@ -69,7 +71,7 @@ alias l='eza'
 alias la='eza -la'
 alias sl='eza'
 alias lg='lazygit'
-alias v='tmux set-option status;nvim'
+alias v='nvim'
 alias mkdir='mkdir -p'
 alias tk='tmux kill-server'
 alias zk='zellij kill-all-sessions'
