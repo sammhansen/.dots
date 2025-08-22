@@ -5,6 +5,8 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
+eval "$(zellij setup --generate-auto-start zsh)"
+
 # --- PLUGINS ---
 
 zinit light zsh-users/zsh-syntax-highlighting

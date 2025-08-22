@@ -9,22 +9,20 @@
   "terminal.integrated.fontLigatures.enabled": true,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "vscode.typescript-language-features",
-  "terminal.integrated.defaultProfile.linux": "zellij",
+  "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.profiles": {
-    "zellij": {
-      "path": "/usr/bin/zellij"
-    },
     "zsh": {
-      "path": "/usr/bin/zsh"
+      "path": "/usr/bin/zsh",
+      "args": [
+        "-c",
+        "zellij attach -c"
+      ]
     },
     "fish": {
       "path": "/usr/bin/fish"
     },
     "bash": {
       "path": "/usr/bin/bash"
-    },
-    "tmux": {
-      "path": "/usr/bin/tmux"
     }
   },
   "github.copilot.enable": {
@@ -38,5 +36,6 @@
   "[rust]": {
     "editor.defaultFormatter": "statiolake.vscode-rustfmt",
     "editor.formatOnSave": true
-  }
+  },
+  "terminal.integrated.gpuAcceleration": "off"
 }
