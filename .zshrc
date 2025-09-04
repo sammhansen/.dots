@@ -1,11 +1,20 @@
+
+# # integrate zellij
+eval "$(zellij setup --generate-auto-start zsh)"
+
+# # integrate tmux
+# if command -v tmux &> /dev/null; then
+#   # Only start tmux if not already inside one
+#   [ -z "$TMUX" ] && exec tmux new-session -A -s main
+# fi
+
+
 # --- ZINIT ---
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
-
-eval "$(zellij setup --generate-auto-start zsh)"
 
 # --- PLUGINS ---
 
@@ -50,12 +59,17 @@ eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
+# Show ⏎ when a command doesn't end with newline
+PROMPT_EOL_MARK=$'\u23ce'
+
+
 # --- ALIASES ---
 
 alias ls='ls --color'
 alias ls='eza'
 alias q='exit'
 alias :q='exit'
+alias x='clear'
 alias l='eza'
 alias la='eza -la'
 alias sl='eza'

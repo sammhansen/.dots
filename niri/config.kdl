@@ -11,7 +11,7 @@ input {
     }
 
     mouse {
-        natural-scroll
+        // natural-scroll
     }
 
     trackpoint {
@@ -31,19 +31,19 @@ cursor {
     hide-after-inactive-ms 1000
 }
 
-// output "eDP-1" {
-//     mode "1920x1080@60.00"
-//     scale 1
-//     transform "normal"
-//     position x=1920 y=720
-// }
-
 output "eDP-1" {
     mode "1920x1080@60.00"
-    scale 1.15
+    scale 1
     transform "normal"
-    position x=0 y=1080
+    position x=1920 y=260
 }
+
+// output "eDP-1" {
+//     mode "1920x1080@60.00"
+//     scale 1.15
+//     transform "normal"
+//     position x=0 y=1080
+// }
 
 output "HDMI-A-2" {
     mode "1920x1080@60.00"
@@ -118,8 +118,8 @@ spawn-at-startup "wlsunset" "-t" "3500" "-T" "6500" "-S" "07:00" "-s" "19:00" "-
 spawn-at-startup "hypridle"
 spawn-at-startup "kdeconnectd"
 spawn-at-startup "kdeconnect-indicator"
-spawn-at-startup "lbagtk" "--low" "20" "--risky" "10" "--daemon"
-spawn-at-startup "vicinae" "server"
+// spawn-at-startup "lbagtk" "--low" "20" "--risky" "10" "--daemon"
+// spawn-at-startup "vicinae" "server"
 
 
 hotkey-overlay {
@@ -146,7 +146,6 @@ gestures {
 }
 
 environment {
-    DISPLAY ":1"
     _JAVA_AWT_WM_NONREPARENTING "1"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
     EDITOR "nvim"
@@ -206,6 +205,12 @@ window-rule {
 }
 
 window-rule {
+  match app-id="^scrcpy$"
+  open-floating true
+  opacity 1.0
+}
+
+window-rule {
   match app-id="^xdg-desktop-portal-gtk$" title="^All Files"
   open-floating true
   min-width 400
@@ -244,9 +249,19 @@ window-rule {
 }
 
 window-rule {
+  match app-id="^code$"
+  default-column-width { proportion 1.0; }
+}
+
+window-rule {
+  match app-id="^dev.zed.Zed$"
+  default-column-width { proportion 1.0; }
+}
+
+window-rule {
     geometry-corner-radius 1
     clip-to-geometry true
-    opacity 0.95
+    opacity 1.0
 }
 
 binds {
@@ -254,21 +269,23 @@ binds {
 
     Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     Super+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    // Super+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
     Super+B { spawn "brave"; }
     Alt+C { spawn "bash" "-c" "~/.config/niri/scripts/chatgpt.sh"; }
     Alt+S { spawn "bash" "-c" "~/.config/niri/scripts/google.sh"; }
     Super+E { spawn "thunar"; }
-    Super+A { spawn "fuzzel"; }
+    Super+Shift+Z { spawn "bash" "-c" "ZED_WINDOW_DECORATIONS=server zeditor"; }
+    Alt+A { spawn "fuzzel"; }
     Alt+Space { spawn "vicinae"; }
-    Super+P { spawn "frbw"; }
-    Super+Z { spawn "hyprpicker" "-a"; }
+    Super+Shift+P { spawn "frbw"; }
+    Super+X { spawn "hyprpicker" "-a"; }
 
     Super+Ctrl+W { spawn "waypaper"; }
-    // Super+Period { spawn "~/.config/niri/scripts/emoji.sh"; }
-    // Super+V { spawn "~/.config/niri/scripts/clipboard.sh"; }
-    Super+V { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
-    // Alt+Space { spawn "~/.config/niri/scripts/quick.sh"; }
-    Super+S { spawn "swaync-client" "--toggle-panel"; }
+    Super+Period { spawn "~/.config/niri/scripts/emoji.sh"; }
+    // Super+V { spawn "vicinae" "vicinae://extensions/vicinae/clipboard/history"; }
+    Super+C { spawn "~/.config/niri/scripts/clipboard.sh"; }
+    Alt+Q { spawn "~/.config/niri/scripts/quick.sh"; }
+    Alt+P { spawn "swaync-client" "--toggle-panel"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "+5"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "-5"; }
@@ -420,7 +437,7 @@ binds {
     Mod+V { maximize-column; }
     Mod+F { fullscreen-window; }
 
-    Mod+Alt+V { expand-column-to-available-width; }
+    Mod+Shift+V { expand-column-to-available-width; }
 
     Mod+C { center-column; }
     Mod+Ctrl+C { center-visible-columns; }

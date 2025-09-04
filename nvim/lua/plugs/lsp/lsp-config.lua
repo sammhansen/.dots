@@ -46,7 +46,6 @@ return {
       cssls = {},
       ts_ls = {},
       tailwindcss = {},
-      nil_ls = {},
       solidity_ls_nomicfoundation = {},
 
     }
