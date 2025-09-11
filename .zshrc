@@ -98,6 +98,8 @@ alias car='bat'
 
 alias cr='cargo run'
 alias cb='cargo build'
+alias cbr='cargo build --release'
+alias cbrl='cargo build --release --locked'
 
 # --- HISTORY ---
 
@@ -122,3 +124,6 @@ setopt hist_find_no_dups
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
+
+# Created by `pipx` on 2025-09-11 11:40:37
+export PATH="$PATH:/home/tamara/.local/bin"
