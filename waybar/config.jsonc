@@ -75,22 +75,27 @@
       "format": "{index}"
     },
     "hyprland/workspaces": {
-      "format": "{icon}",
+      "disable-scroll": true,
+      "all-outputs": false,
+      "active-only": true,
+      "on-scroll-up": "hyprctl dispatch workspace -1",
+      "on-scroll-down": "hyprctl dispatch workspace +1",
       "on-click": "activate",
+      "format": "{icon}",
       "orientation": "vertical",
       "persistent-workspaces": {
-        "eDP-1": [
-          6,
-          7,
-          8,
-          9
-        ],
         "HDMI-A-2": [
           1,
           2,
           3,
           4,
           5
+        ],
+        "eDP-1": [
+          6,
+          7,
+          8,
+          9
         ]
       }
     },

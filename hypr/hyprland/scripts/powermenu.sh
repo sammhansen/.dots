@@ -25,6 +25,6 @@ Shutdown)
   systemctl poweroff
   ;;
 Logout)
-  niri msg action quit
+  pkill Hyprland
   ;;
 esac

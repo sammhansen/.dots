@@ -1,0 +1,41 @@
+{
+  "workbench.startupEditor": "none",
+  "editor.fontSize": 16,
+  "editor.fontFamily": "VictorMono NFP SemiBold",
+  "editor.fontLigatures": true,
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "terminal.integrated.fontFamily": "VictorMono NFP SemiBold",
+  "terminal.integrated.fontLigatures.enabled": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "vscode.typescript-language-features",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.profiles": {
+    "zsh": {
+      "path": "/usr/bin/zsh",
+      "args": [
+        "-c",
+        "zellij attach -c"
+      ]
+    },
+    "fish": {
+      "path": "/usr/bin/fish"
+    },
+    "bash": {
+      "path": "/usr/bin/bash"
+    }
+  },
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "typescript": false
+  },
+  "explorer.confirmDelete": false,
+  "[rust]": {
+    "editor.defaultFormatter": "statiolake.vscode-rustfmt",
+    "editor.formatOnSave": true
+  },
+  "terminal.integrated.gpuAcceleration": "off"
+}

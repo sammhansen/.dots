@@ -1,15 +1,13 @@
-# --- ENV ---
 
-export MANPAGER='nvim +Man!'
-export EDITOR='nvim'
-export _JAVA_AWT_WM_NONREPARENTING=1
+# # integrate zellij
+eval "$(zellij setup --generate-auto-start zsh)"
 
-# PATH
-export PATH="$HOME/.spicetify:$PATH"
-export PATH="$HOME/go/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/.pdtm/go/bin:$PATH"
-export PATH="$HOME/.dotnet/tools:$PATH"
+# # integrate tmux
+# if command -v tmux &> /dev/null; then
+#   # Only start tmux if not already inside one
+#   [ -z "$TMUX" ] && exec tmux new-session -A -s main
+# fi
+
 
 # --- ZINIT ---
 
@@ -30,6 +28,7 @@ zinit light Aloxaf/fzf-tab
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
+# update index with pkgfile --update
 zinit snippet OMZP::command-not-found
 
 # --- COMPLETION ---
@@ -51,6 +50,8 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 # enable preview for zoxide
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+# rehash after new binary is installed
+zstyle ':completion:*' rehash true
 
 # --- SHELL INTEGRATIONS ---
 
@@ -58,17 +59,22 @@ eval "$(starship init zsh)"
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
+# Show ⏎ when a command doesn't end with newline
+PROMPT_EOL_MARK=$'\u23ce'
+
+
 # --- ALIASES ---
 
 alias ls='ls --color'
 alias ls='eza'
 alias q='exit'
 alias :q='exit'
+alias x='clear'
 alias l='eza'
 alias la='eza -la'
 alias sl='eza'
 alias lg='lazygit'
-alias v='tmux set-option status;nvim'
+alias v='nvim'
 alias mkdir='mkdir -p'
 alias tk='tmux kill-server'
 alias zk='zellij kill-all-sessions'
@@ -92,6 +98,8 @@ alias car='bat'
 
 alias cr='cargo run'
 alias cb='cargo build'
+alias cbr='cargo build --release'
+alias cbrl='cargo build --release --locked'
 
 # --- HISTORY ---
 
@@ -116,3 +124,6 @@ setopt hist_find_no_dups
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
+
+# Created by `pipx` on 2025-09-11 11:40:37
+export PATH="$PATH:/home/tamara/.local/bin"
