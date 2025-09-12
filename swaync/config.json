@@ -69,18 +69,6 @@
           "update-command": "sh -c 'pgrep -x wlsunset > /dev/null && echo true || echo false'"
         },
         {
-          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && easyeffects --bypass 1 || easyeffects --bypass 2'",
-          "label": "󰺢 Bypass",
-          "position": "right",
-          "type": "toggle",
-          "update-command": "sh -c 'easyeffects --bypass 3 | grep -q '\\''1'\\'' && echo true || echo false'"
-        },
-        {
-          "command": "sh -c 'niri msg action screenshot'",
-          "label": "󱣵 Snip",
-          "position": "left"
-        },
-        {
           "active": false,
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && swaync-client --dnd-on || swaync-client --dnd-off'",
           "label": " DnD",
@@ -89,7 +77,17 @@
           "update-command": "sh -c '[[ $(swaync-client --get-dnd) == \"true\" ]] && echo true || echo false'"
         },
         {
-          "command": "sh -c 'hyprpicker -a'",
+          "command": "sh -c 'niri msg action screenshot'",
+          "label": "󱣵 Snip",
+          "position": "left"
+        },
+        {
+          "command": "~/.config/swaync/scripts/qr.sh",
+          "label": "󰐳  QR",
+          "position": "right"
+        },
+        {
+          "command": "~/.config/swaync/scripts/hyprpicker.sh",
           "label": "󱨍 Picker",
           "position": "left"
         },

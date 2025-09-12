@@ -1,16 +1,20 @@
 #!/usr/bin/env bash
 
-OPTIONS="xwayland"
+OPTIONS="bypass\nscreenshot\nqr code"
 CHOICE=$(echo -e "$OPTIONS" | fuzzel --dmenu -p "> " --placeholder "choose an action")
 
 case "$CHOICE" in
-  xwayland)
-    if pgrep -x "Xwayland" > /dev/null; then
-      pkill -f "xwayland-satellite"
-      notify-send -i ~/.arch/.assets/icons/nix.png "System" "Xwayland has been turned off"
-    else
-      xwayland-satellite :1 &
-      notify-send -i ~/.arch/.assets/icons/nix.png "System" "Xwayland has been turned on"
+  bypass)
+    if [ "$(easyeffects --bypass 3)" = "0" ]; then
+      easyeffects --bypass 1
+     else 
+      easyeffects --bypass 2
     fi
     ;;
+  screenshot)
+    niri msg action screenshot
+    ;;
+  "qr code")
+    ~/.config/swaync/scripts/qr.sh
 esac
+
