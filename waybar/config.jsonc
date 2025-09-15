@@ -141,10 +141,11 @@
     },
     "battery": {
       "design-capacity": false,
-      "format": "<span foreground='#cba6f7' size='13000'></span>\n{capacity}",
-      "format-charging": "<span foreground='#a6e3a1' size='13000'></span>\n{capacity}",
-      "format-full": "<span foreground='#cba6f7' size='13000'></span>\n{capacity}",
-      "format-plugged": "<span foreground='#74c7ec' size='13000'></span>\n{capacity}",
+      "format": "󰁹",
+      // "format-charging": "󱐌",
+      "format-charging": "",
+      "format-full": "󱟢",
+      "format-plugged": "󰂄",
       "full-at": 100,
       "states": {
         "critical": 10,
