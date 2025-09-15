@@ -1,0 +1,90 @@
+{
+  "features": {
+    "edit_prediction_provider": "none"
+  },
+  "icon_theme": "Catppuccin Mocha",
+  "experimental.theme_overrides": {
+    "background.appearance": "blurred"
+  },
+  "vim_mode": true,
+  "relative_line_numbers": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "dark",
+    "light": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha"
+  },
+  "autosave": "off",
+  "format_on_save": "on",
+  "buffer_font_family": "VictorMono Nerd Font",
+  "buffer_font_features": {
+    "calt": true
+  },
+  "toolbar": {
+    "breadcrumbs": true
+  },
+  "hide_mouse": "on_typing_and_movement",
+  "cursor_blink": false,
+  // show types
+  "inlay_hints": {
+    "enabled": true
+  },
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": false
+  },
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware"
+  },
+  "languages": {
+    "JavaScript": {
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": [
+            "--stdin-filepath",
+            "{buffer_path}"
+          ]
+        }
+      }
+    }
+  },
+  "terminal": {
+    "alternate_scroll": "off",
+    "blinking": "terminal_controlled",
+    "copy_on_select": false,
+    "keep_selection_on_copy": false,
+    "dock": "bottom",
+    "default_width": 640,
+    "default_height": 600,
+    "detect_venv": {
+      "on": {
+        "directories": [
+          ".env",
+          "env",
+          ".venv",
+          "venv"
+        ],
+        "activate_script": "default"
+      }
+    },
+    "env": {},
+    "font_family": null,
+    "font_features": null,
+    "font_size": null,
+    "line_height": "comfortable",
+    "minimum_contrast": 45,
+    "option_as_meta": false,
+    "button": true,
+    "shell": "system",
+    "toolbar": {
+      "breadcrumbs": true
+    },
+    "working_directory": "current_project_directory",
+    "scrollbar": {
+      "show": null
+    }
+  }
+}
