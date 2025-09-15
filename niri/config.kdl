@@ -149,6 +149,7 @@ environment {
     _JAVA_AWT_WM_NONREPARENTING "1"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
     EDITOR "nvim"
+    ZED_WINDOW_DECORATIONS "server"
 }
 
 prefer-no-csd
@@ -255,7 +256,7 @@ window-rule {
 
 window-rule {
   match app-id="^dev.zed.Zed$"
-  default-column-width { proportion 1.0; }
+  default-column-width { }
 }
 
 window-rule {
