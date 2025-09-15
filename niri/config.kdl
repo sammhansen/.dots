@@ -169,8 +169,8 @@ window-rule {
 }
 
 window-rule {
-  match app-id="^Bitwarden$"
-  open-floating false
+  match title="^Bitwarden$"
+  open-floating true
   block-out-from "screen-capture"
 }
 
