@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Remix IDE
-Comment=Ethereum IDE for smart contract development
-Exec=/opt/remix-desktop/Remix-Desktop-1.1.5.AppImage
-Icon=/home/tamara/.local/share/applications/icons/remix.png
-Terminal=false
-Type=Application
-Categories=Development;IDE;Blockchain;
-
