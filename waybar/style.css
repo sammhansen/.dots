@@ -52,24 +52,23 @@ tooltip label {
 }
 
 #custom-menu {
-  color: @main_accent;
-  font-size: 23px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right: 0px;
-  padding-left: 0px;
+  color: @crust;
+  background-color: @main_accent;
+  font-size: 18px;
+  margin: 7px 7px 2px 7px;
+  /* margin: 5px; */
 }
 
 #cpu,
 #memory,
 #temperature,
 #disk,
-#clock,
-#battery {
+#clock {
   color: @text;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
+
 
 #temperature.critical {
   background-color: @error;
@@ -106,7 +105,7 @@ tooltip label {
   font-size: 13px;
   padding: 0px;
   margin: 2px 7px 2px 7px;
-  border-radius: 20px;
+  border-radius: 0px;
 }
 
 #workspaces button:not(.active):hover {
@@ -174,10 +173,33 @@ tooltip label {
   color: @text;
 }
 
-#battery.icon {
-  font-size: 20px;
+
+/* #battery .icon { */
+/*   font-size: 100px; */
+/* } */
+
+#battery {
+  color: @text;
+  margin: 4px 7px 9px 7px;
+}
+
+#battery.charging {
+  background-color: @green;
+  color: @crust;
+}
+
+#battery.full {
+  background-color: @blue;
+  color: @crust;
+}
+
+#battery.plugged {
+  background-color: @yellow;
+  color: @crust;
 }
 
 #battery.critical:not(.charging) {
+  background-color: @red;
+  color: @crust;
   color: @error;
 }

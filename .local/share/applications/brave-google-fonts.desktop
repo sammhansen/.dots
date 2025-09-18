@@ -1,8 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Version=1.0
-Terminal=false
-Type=Application
-Name=Google Fonts
-Exec=brave --app=https://fonts.google.com
-Icon=/home/tamara/.local/share/applications/icons/google-fonts.png

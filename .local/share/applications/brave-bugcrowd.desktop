@@ -1,9 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Version=1.0
-Terminal=false
-Type=Application
-Name=Bug Crowd
-Exec=brave --app=https://bugcrowd.com/engagements
-Icon=/home/tamara/.local/share/applications/icons/bugcrowd.png
-

@@ -1,9 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Version=1.0
-Terminal=false
-Type=Application
-Name=Cisco
-Exec=brave --app=https://www.netacad.com/catalogs/learn
-Icon=/home/tamara/.local/share/applications/icons/cisco.png
-

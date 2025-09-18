@@ -149,6 +149,7 @@ environment {
     _JAVA_AWT_WM_NONREPARENTING "1"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
     EDITOR "nvim"
+    ZED_WINDOW_DECORATIONS "server"
 }
 
 prefer-no-csd
@@ -169,8 +170,8 @@ window-rule {
 }
 
 window-rule {
-  match app-id="^Bitwarden$"
-  open-floating false
+  match title="^Bitwarden$"
+  open-floating true
   block-out-from "screen-capture"
 }
 
@@ -255,7 +256,7 @@ window-rule {
 
 window-rule {
   match app-id="^dev.zed.Zed$"
-  default-column-width { proportion 1.0; }
+  default-column-width { }
 }
 
 window-rule {
@@ -277,7 +278,7 @@ binds {
     Super+Shift+Z { spawn "bash" "-c" "ZED_WINDOW_DECORATIONS=server zeditor"; }
     Alt+A { spawn "fuzzel"; }
     Alt+Space { spawn "vicinae"; }
-    Super+Shift+P { spawn "frbw"; }
+    Super+Shift+P { spawn "frbw" "show"; }
     Super+X { spawn "hyprpicker" "-a"; }
 
     Super+Ctrl+W { spawn "waypaper"; }
