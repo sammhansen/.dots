@@ -2,6 +2,7 @@
   "features": {
     "edit_prediction_provider": "none"
   },
+
   "icon_theme": "Catppuccin Mocha",
   "experimental.theme_overrides": {
     "background.appearance": "blurred"
@@ -38,18 +39,27 @@
     "enabled": true,
     "coloring": "indent_aware"
   },
+  "auto_signature_help": true,
+  "confirm_quit": false,
   "languages": {
     "JavaScript": {
       "formatter": {
         "external": {
           "command": "prettier",
-          "arguments": [
-            "--stdin-filepath",
-            "{buffer_path}"
-          ]
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
         }
       }
     }
+  },
+  "auto_install_extensions": {
+    "discord-presence": true,
+    "wakatime": true,
+    "catppuccin": true,
+    "catppuccin-icons": true,
+    "dockerfile": true,
+    "html": false,
+    "emmet": false,
+		"make": true
   },
   "terminal": {
     "alternate_scroll": "off",
@@ -61,12 +71,7 @@
     "default_height": 600,
     "detect_venv": {
       "on": {
-        "directories": [
-          ".env",
-          "env",
-          ".venv",
-          "venv"
-        ],
+        "directories": [".env", "env", ".venv", "venv"],
         "activate_script": "default"
       }
     },

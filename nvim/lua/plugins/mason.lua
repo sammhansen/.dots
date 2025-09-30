@@ -10,6 +10,7 @@ return {
 					-- formatters
 					"stylua",
 					"shfmt",
+					"clang-format",
 				},
 			},
 		},

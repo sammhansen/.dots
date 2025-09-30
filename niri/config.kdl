@@ -102,7 +102,8 @@ layout {
 
 spawn-at-startup "powermode-indicator"
 spawn-at-startup "vesktop"
-spawn-at-startup "swww-daemon" "--format" "xrgb"
+// spawn-at-startup "swww-daemon" "--format" "xrgb"
+spawn-at-startup "sh" "-c" "swaybg --image ~/.arch/wallpapers/bsod.png --output '*' --mode fill"
 spawn-at-startup "waybar"
 spawn-at-startup "swaync"
 spawn-at-startup "swayosd-server"
@@ -119,7 +120,7 @@ spawn-at-startup "hypridle"
 spawn-at-startup "kdeconnectd"
 spawn-at-startup "kdeconnect-indicator"
 // spawn-at-startup "lbagtk" "--low" "20" "--risky" "10" "--daemon"
-// spawn-at-startup "vicinae" "server"
+spawn-at-startup "vicinae" "server"
 
 
 hotkey-overlay {
@@ -136,6 +137,11 @@ overview {
 
 layer-rule {
   match namespace="^swww-daemon$"
+  place-within-backdrop true
+}
+
+layer-rule {
+  match namespace="^wallpaper$"
   place-within-backdrop true
 }
 
