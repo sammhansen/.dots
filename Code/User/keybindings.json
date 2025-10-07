@@ -1,0 +1,15 @@
+[
+  {
+    "key": "ctrl+c",
+    "command": "workbench.action.terminal.copySelection",
+    "when": "terminalFocus && terminalHasSelection"
+  },
+  {
+    "key": "ctrl+shift+c",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u0003"
+    },
+    "when": "terminalFocus"
+  }
+]
