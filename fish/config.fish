@@ -19,13 +19,13 @@ end
     # end
 # end
 
-zoxide init fish | source
 starship init fish | source
 if test -f ~/.cache/ags/user/generated/terminal/sequences.txt
     cat ~/.cache/ags/user/generated/terminal/sequences.txt
 end
 
 alias "ls"="eza"
+alias "x"="clear"
 alias "q"="exit"
 alias ":q"="exit"
 alias "l"="eza"
@@ -57,11 +57,13 @@ alias "car"="bat"
 
 alias "cr"="cargo run"
 alias "cb"="cargo build"
+alias "flutter"="fvm flutter"
 
 
 export MANPAGER="nvim +Man!"
 export EDITOR="nvim"
 export _JAVA_AWT_WM_NONREPARENTING=1
+export CHROME_EXECUTABLE=google-chrome-stable
 
 fish_add_path $HOME/.spicetify
 
@@ -73,5 +75,9 @@ fish_add_path $HOME/.pdtm/go/bin
 
 # Created by `pipx` on 2025-07-01 08:09:14
 set PATH $PATH $HOME/.local/bin
+set -Ux PAGER less
 
 fish_add_path /home/tamara/.spicetify
+
+
+zoxide init fish | source
