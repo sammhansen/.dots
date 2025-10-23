@@ -3,7 +3,7 @@
 Version=1.0
 Terminal=false
 Type=Application
-Name=Claude AI
+Name=Claude
 Exec=brave --app=https://claude.ai
-Icon=/home/tamara/.local/share/applications/icons/chatgpt.png
+Icon=/home/tamara/.local/share/applications/icons/claude.svg
 
