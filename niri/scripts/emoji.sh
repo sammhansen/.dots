@@ -16,6 +16,7 @@ exit
 ←↑→↓ all directions up down left right arrows
 AH↗️HA↘️HA↗️HA↘️HA↗️HA↘️HA↗️HA↘️ pekora arrows hahaha rabbit
 • dot circle separator
+° degree
 「」 japanese quote square bracket
 ¯\_(ツ)_/¯ shrug idk i dont know
 ↵ enter key return
