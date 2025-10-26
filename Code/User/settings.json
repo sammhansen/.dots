@@ -23,23 +23,27 @@
 		"integrated": {
 			"fontFamily": "VictorMono NFP SemiBold",
 			"fontLigatures.enabled": true,
-			"defaultProfile.linux": "tmux",
 			"gpuAcceleration": "off",
+			"defaultProfile": {
+				"linux": "tmux"
+			},
 			"profiles": {
-				"tmux": {
-					"path": "/usr/bin/tmux"
-				},
-				"zellij": {
-					"path": "/usr/bin/zellij"
-				},
-				"fish": {
-					"path": "/usr/bin/fish"
-				},
-				"zsh": {
-					"path": "/usr/bin/zsh"
-				},
-				"bash": {
-					"path": "/usr/bin/bash"
+				"linux": {
+					"tmux": {
+						"path": "/usr/bin/tmux"
+					},
+					"zellij": {
+						"path": "/usr/bin/zellij"
+					},
+					"fish": {
+						"path": "/usr/bin/fish"
+					},
+					"zsh": {
+						"path": "/usr/bin/zsh"
+					},
+					"bash": {
+						"path": "/usr/bin/bash"
+					}
 				}
 			}
 		}
@@ -80,5 +84,6 @@
 		"editor.tabCompletion": "onlySnippets",
 		"editor.wordBasedSuggestions": "off"
 	},
-	"dart.flutterHotReloadOnSave": "all"
+	"dart.flutterHotReloadOnSave": "all",
+	"workbench.iconTheme": "catppuccin-mocha"
 }
