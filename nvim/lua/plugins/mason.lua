@@ -11,6 +11,7 @@ return {
 					"stylua",
 					"shfmt",
 					"clang-format",
+					"prettierd",
 				},
 			},
 		},
@@ -31,6 +32,9 @@ return {
 			"html",
 			"tailwindcss",
 			"cssls",
+			"asm_lsp",
+			"jsonls",
+			"taplo", -- toml lsp
 			-- "rust_analyzer"
 		},
 		automatic_enable = {
@@ -40,6 +44,8 @@ return {
 			"html",
 			"cssls",
 			"tailwindcss",
+			"jsonls",
+			"taplo",
 			exclude = {},
 		},
 	},
