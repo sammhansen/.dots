@@ -5,16 +5,36 @@ pkill fuzzel
 BROWSER="/usr/bin/brave"
 PROMPT="󰊭  "
 PLACEHOLDER="Search Google or type URL"
-SEARCHENGINE="https://www.google.com/search?q="
+DEFAULT_ENGINE="https://www.google.com/search?q="
+
+# Define bang → search engine mappings
+declare -A ENGINES=(
+	["!gg"]="https://www.google.com/search?q="
+	["!ddg"]="https://duckduckgo.com/?q="
+	["!yt"]="https://www.youtube.com/results?search_query="
+	["!gh"]="https://github.com/search?q="
+	["!rd"]="https://www.reddit.com/search/?q="
+)
 
 query=$(echo | /usr/bin/fuzzel --dmenu -w 100 -p "$PROMPT" --lines 0 --placeholder "$PLACEHOLDER")
 
-
 [ -z "$query" ] && exit 0
 
+# If it's a URL, open directly
 if [[ "$query" =~ ^https?:// ]]; then
-    $BROWSER --app="$query"
-else
-    $BROWSER --app="${SEARCHENGINE}${query// /+}"
+	exec $BROWSER --app="$query"
 fi
 
+# Extract the first word (possible bang)
+first_word="${query%% *}"
+
+if [[ ${ENGINES[$first_word]} ]]; then
+	# Remove the bang from the query
+	search="${query#"$first_word"}"
+	url="${ENGINES[$first_word]}${search// /+}"
+else
+	# Default to Google
+	url="${DEFAULT_ENGINE}${query// /+}"
+fi
+
+exec $BROWSER --app="$url"
