@@ -37,6 +37,10 @@ return { -- Autoformat
 			PKGBUILD = { "shfmt" },
 			javascript = { "prettierd", "prettier", stop_after_first = true },
 			typescript = { "prettierd", "prettier", stop_after_first = true },
+			json = { "prettierd", "prettier", stop_after_first = true },
+			ini = { "prettierd", "prettier" },
+			conf = { "prettierd", "prettier" },
+			toml = { "taplo" },
 		},
 	},
 }
