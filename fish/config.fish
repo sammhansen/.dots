@@ -13,10 +13,11 @@ if status is-interactive
 
 end
 
+
 # if status is-interactive
-    # if not set -q TMUX
-        # tmux attach-session -t default || tmux new-session -s default
-    # end
+#     if not set -q TMUX
+#         tmux attach-session -t genesis || tmux new-session -s genesis
+#     end
 # end
 
 starship init fish | source
@@ -26,6 +27,7 @@ end
 
 alias "ls"="eza"
 alias "x"="clear"
+alias "c"="wl-copy"
 alias "q"="exit"
 alias ":q"="exit"
 alias "l"="eza"
@@ -57,7 +59,6 @@ alias "car"="bat"
 
 alias "cr"="cargo run"
 alias "cb"="cargo build"
-alias "flutter"="fvm flutter"
 
 
 export MANPAGER="nvim +Man!"
