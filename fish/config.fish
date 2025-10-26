@@ -13,6 +13,7 @@ if status is-interactive
 
 end
 
+fish_vi_key_bindings
 
 # if status is-interactive
 #     if not set -q TMUX
