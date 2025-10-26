@@ -1,6 +1,6 @@
 require("plugins.lspconfig.keymaps")
 
-vim.lsp.enable({ "rust_analyzer", "lua_ls", "bashls", "clangd" })
+vim.lsp.enable({ "rust_analyzer", "lua_ls", "bashls", "clangd", "asm_lsp", "jsonls", "taplo" })
 
 return {
 	"neovim/nvim-lspconfig",
