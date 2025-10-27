@@ -24,8 +24,8 @@ input {
 }
 
 cursor {
-    xcursor-theme "Posy_Cursor_Black"
-    xcursor-size 40
+    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-size 25
 
     hide-when-typing
     hide-after-inactive-ms 1000
@@ -102,7 +102,8 @@ layout {
 
 spawn-at-startup "powermode-indicator"
 spawn-at-startup "vesktop"
-spawn-at-startup "swww-daemon" "--format" "xrgb"
+// spawn-at-startup "swww-daemon" "--format" "xrgb"
+spawn-at-startup "sh" "-c" "swaybg --image ~/.dots/wallpapers/bsod.png --output '*' --mode fill"
 spawn-at-startup "waybar"
 spawn-at-startup "swaync"
 spawn-at-startup "swayosd-server"
@@ -119,7 +120,7 @@ spawn-at-startup "hypridle"
 spawn-at-startup "kdeconnectd"
 spawn-at-startup "kdeconnect-indicator"
 // spawn-at-startup "lbagtk" "--low" "20" "--risky" "10" "--daemon"
-// spawn-at-startup "vicinae" "server"
+spawn-at-startup "vicinae" "server"
 
 
 hotkey-overlay {
@@ -136,6 +137,11 @@ overview {
 
 layer-rule {
   match namespace="^swww-daemon$"
+  place-within-backdrop true
+}
+
+layer-rule {
+  match namespace="^wallpaper$"
   place-within-backdrop true
 }
 
@@ -269,15 +275,15 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
-    Super+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    // Super+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
+    // Super+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    Super+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
     Super+B { spawn "brave"; }
     Alt+C { spawn "bash" "-c" "~/.config/niri/scripts/chatgpt.sh"; }
     Alt+S { spawn "bash" "-c" "~/.config/niri/scripts/google.sh"; }
     Super+E { spawn "thunar"; }
     Super+Shift+Z { spawn "bash" "-c" "ZED_WINDOW_DECORATIONS=server zeditor"; }
     Alt+A { spawn "fuzzel"; }
-    Alt+Space { spawn "vicinae"; }
+    Alt+Space { spawn "vicinae" "toggle"; }
     Super+Shift+P { spawn "frbw" "show"; }
     Super+X { spawn "hyprpicker" "-a"; }
 
@@ -309,7 +315,7 @@ binds {
 
     XF86Search { spawn "blueberry"; }
 
-    Mod+O repeat=false { toggle-overview; }
+    Mod+Tab repeat=false { toggle-overview; }
 
     Mod+Q { close-window; }
 
@@ -417,7 +423,7 @@ binds {
     Mod+Alt+8 { move-window-to-workspace 8; }
     Mod+Alt+9 { move-window-to-workspace 9; }
 
-    Mod+Tab { focus-workspace-previous; }
+    Alt+Tab { focus-workspace-previous; }
 
     Mod+BracketLeft  { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }
@@ -437,6 +443,7 @@ binds {
 
     Mod+V { maximize-column; }
     Mod+F { fullscreen-window; }
+	  Mod+Alt+F { toggle-windowed-fullscreen; }
 
     Mod+Shift+V { expand-column-to-available-width; }
 
@@ -458,7 +465,6 @@ binds {
 
     Print { spawn "~/.config/niri/scripts/screenshot.sh"; }
     Alt+Print { screenshot; }
-    Alt+R { spawn "~/.config/niri/scripts/record.sh"; }
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
