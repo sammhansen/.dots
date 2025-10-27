@@ -465,7 +465,6 @@ binds {
 
     Print { spawn "~/.config/niri/scripts/screenshot.sh"; }
     Alt+Print { screenshot; }
-    Alt+R { spawn "~/.config/niri/scripts/record.sh"; }
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
