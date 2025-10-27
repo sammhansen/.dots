@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
-OPTIONS="screen record\nscreenshot\neasyeffects bypass\nqr code"
+OPTIONS="color picker\nscreen record\nscreenshot\neasyeffects bypass\nqr code"
 CHOICE=$(echo -e "$OPTIONS" | fuzzel --dmenu -p "> " --placeholder "choose an action")
 
 case "$CHOICE" in
+"color picker")
+	~/.config/niri/scripts/colorpicker.sh
+	;;
 "screen record")
 	~/.config/niri/scripts/record.sh
 	;;
