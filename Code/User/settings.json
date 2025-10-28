@@ -16,7 +16,7 @@
 	"workbench": {
 		"startupEditor": "none",
 		"colorTheme": "Catppuccin Mocha",
-		"iconTheme": "catppuccin-mocha"
+		"iconTheme": "material-icon-theme"
 	},
 	// TERMINAL //
 	"terminal": {
@@ -84,6 +84,5 @@
 		"editor.tabCompletion": "onlySnippets",
 		"editor.wordBasedSuggestions": "off"
 	},
-	"dart.flutterHotReloadOnSave": "all",
-	"workbench.iconTheme": "catppuccin-mocha"
+	"dart.flutterHotReloadOnSave": "all"
 }
