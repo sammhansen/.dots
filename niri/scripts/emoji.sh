@@ -30,7 +30,7 @@ AH↗️HA↘️HA↗️HA↘️HA↗️HA↘️HA↗️HA↘️ pekora arrows h
 😆 grinning squinting face happy joy lol satisfied haha face glad XD laugh
 😅 grinning face with sweat face hot happy laugh sweat smile relief
 🤣 rolling on the floor laughing face rolling floor laughing lol haha rofl
-😂 face with tears of joy face cry tears weep happy happytears haha
+😂 laugh face with tears of joy face cry tears weep happy happytears haha
 🙂 slightly smiling face face smile
 🙃 upside down face face flipped silly smile
 😉 winking face face happy mischievous secret ;) smile eye
