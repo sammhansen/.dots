@@ -10,7 +10,8 @@
 	},
 	// EXPLORER //
 	"explorer": {
-		"confirmDelete": false
+		"confirmDelete": false,
+		"confirmDragAndDrop": false
 	},
 	// WORKBENCH //
 	"workbench": {
@@ -84,5 +85,9 @@
 		"editor.tabCompletion": "onlySnippets",
 		"editor.wordBasedSuggestions": "off"
 	},
-	"dart.flutterHotReloadOnSave": "all"
+	"dart.flutterHotReloadOnSave": "all",
+	"dart": {
+		"previewFlutterUiGuides": true,
+		"previewFlutterUiGuidesCustomTracking": true
+	}
 }
