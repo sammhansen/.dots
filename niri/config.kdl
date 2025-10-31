@@ -451,7 +451,7 @@ binds {
     Mod+Ctrl+C { center-visible-columns; }
 
     Mod+Space       { toggle-window-floating; }
-    Ctrl+Space { switch-focus-between-floating-and-tiling; }
+    Mod+Alt+Space { switch-focus-between-floating-and-tiling; }
 
     Mod+T { toggle-column-tabbed-display; }
 

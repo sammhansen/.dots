@@ -10,13 +10,14 @@
 	},
 	// EXPLORER //
 	"explorer": {
-		"confirmDelete": false
+		"confirmDelete": false,
+		"confirmDragAndDrop": false
 	},
 	// WORKBENCH //
 	"workbench": {
 		"startupEditor": "none",
 		"colorTheme": "Catppuccin Mocha",
-		"iconTheme": "catppuccin-mocha"
+		"iconTheme": "material-icon-theme"
 	},
 	// TERMINAL //
 	"terminal": {
@@ -85,5 +86,8 @@
 		"editor.wordBasedSuggestions": "off"
 	},
 	"dart.flutterHotReloadOnSave": "all",
-	"workbench.iconTheme": "catppuccin-mocha"
+	"dart": {
+		"previewFlutterUiGuides": true,
+		"previewFlutterUiGuidesCustomTracking": true
+	}
 }

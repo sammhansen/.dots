@@ -14,6 +14,10 @@ declare -A ENGINES=(
 	["!yt"]="https://www.youtube.com/results?search_query="
 	["!gh"]="https://github.com/search?q="
 	["!rd"]="https://www.reddit.com/search/?q="
+	["!pb"]="https://pub.dev/packages?q="
+	["!aur"]="https://aur.archlinux.org/packages?K="
+	["!pac"]="https://archlinux.org/packages/?q="
+	["!wiki"]="https://wiki.archlinux.org/index.php?search="
 )
 
 query=$(echo | /usr/bin/fuzzel --dmenu -w 100 -p "$PROMPT" --lines 0 --placeholder "$PLACEHOLDER")
