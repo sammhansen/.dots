@@ -27,7 +27,7 @@ if [ "${#addrs[@]}" -eq 0 ]; then
 fi
 
 # Let the user pick via fuzzel
-choice="$(printf '%s\n' "${addrs[@]}" | fuzzel --dmenu --prompt "> " --placeholder "connect to ADB:")" || true
+choice="$(printf '%s\n' "${addrs[@]}" | fuzzel --dmenu --prompt "󰀲  " --placeholder "connect to ADB")" || true
 
 # If user cancelled or nothing chosen
 if [ -z "${choice:-}" ]; then
