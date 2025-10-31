@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
-OPTIONS="color picker\nscreen record\nscreenshot\neasyeffects bypass\nqr code"
+OPTIONS="adb connect\ncolor picker\nscreen record\nscreenshot\neasyeffects bypass\nqr code"
 CHOICE=$(echo -e "$OPTIONS" | fuzzel --dmenu -p "> " --placeholder "choose an action")
 
 case "$CHOICE" in
+"adb connect")
+	~/.config/niri/scripts/adb.sh
+	;;
 "color picker")
 	~/.config/niri/scripts/colorpicker.sh
 	;;
